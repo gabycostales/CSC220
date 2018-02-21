@@ -1,0 +1,99 @@
+0,1. Write a loop to add a new entry, newEntry, to a sorted array, theDirectory.
+   To get the name of an entry use getName(), as in newEntry.getName().  Assume
+   that the capacity is greater than the size, the current number of entries.
+   (While there is a previous entry and it comes after newEntry, move it forward
+   one and then step back one in the array.  Put newEntry into the array.)
+
+	int index = size++;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. The millisecond clock reads 1139497290900.  You call method fib(n) 1000 times
+   on input size 100.  The clock reads 1139497290910 afterwards.  What is the
+   running time of fib(n) in milliseconds, accurate to the nearest microsecond
+   (= 0.001 millisecond)?  (How would you report this number in a scientific
+   setting?)
+
+
+
+
+
+
+
+
+
+
+
+
+3. If you analyze fib(n) and determine its running time to be O(n^2), what is
+   the constant?
+
+
+
+
+4,5. Write a loop to print out all the values in a doubly linked list with
+   first entry, head, and last entry, tail.  The entries are of type DLLNode,
+   with methods getNext(), getPrevious(), and getValue().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6,7. Write code to add an entry with key name and value number at the head of a
+   doubly linked list.  Draw the diagram to help you.  You can assume there is
+   at least one entry already in the list.  DLLNode has methods setNext(newNext)
+   and setPrevious(newPrevious).
+
+	DLLNode entry = new DLLNode(name, number);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8,9. Write code to remove the last entry (tail) of a doubly linked list.  You
+   can assume that the list has at least two elements.

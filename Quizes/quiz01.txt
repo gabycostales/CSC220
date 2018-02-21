@@ -1,0 +1,124 @@
+0. What is the nearest power of 2 to one million?
+
+
+
+
+
+
+
+
+1. How many cycles per second in a GHz (giga Hertz)?
+
+
+
+
+
+
+
+
+2. What is the minimum time to the nearest second that a computer with 8 GB RAM
+   and a dual core 2 GHz processor can locate all bytes in its RAM which are set
+   to 'V'?
+
+
+
+
+
+
+
+
+3. Give at least two reasons why it is harder for Google to find the best ten
+   pages with Victor Milenkovic on them (compared to #2).
+
+
+
+
+
+
+
+
+
+
+
+
+4. If one weighing of a pile of coins can detect that the pile contains a bad
+   coin, how many weighings does it take to determine which coin is bad in a
+   pile of 1000?
+
+
+
+
+
+
+
+
+
+5. Same question, pile of n?
+
+
+
+
+
+
+
+public class Computer {
+    private int ramSize;	// gibibytes
+    private double speed;	// gigaHertz
+
+    public Computer(int ram, double speed) {
+	ramSize = ram;
+        this.speed = speed;
+    }
+    public int getRamSize () { return ramSize; }
+    public int getSpeed () { return speed; }
+    public double getPower () { return ramSize * speed; }
+}
+
+public class Notebook extends Computer {
+    private double weight;
+    
+    public Notebook(int ram, double speed, double weight) {
+	super(ram, speed);
+        this.weight = weight;
+    }
+    public double getWeight () { return weight; }
+    public double getPower() { return ramSize * speed / 2; }
+}
+-------------------------------------------------------------------------
+
+6. Why doesn't Notebook.getPower compile and what are two ways to fix it?
+
+
+
+
+
+
+
+
+
+
+
+
+Assuming you've fixed Notebook.getPower, for #1-#3 say what happens:
+compiler error, runtime exception, or what it prints out.
+
+7. 	Computer c = new Notebook(4, 2.11, 7.5);
+	System.out.println(c.getWeight());
+
+
+
+
+
+
+8. 	Computer c = new Notebook(4, 2.11, 7.5);
+	System.out.println(c.getPower());
+
+
+
+
+
+
+9. 	Computer c = new Computer(6, 1.88);
+	Notebook n = (Notebook) c;
+	System.out.println(n.getPower());
+

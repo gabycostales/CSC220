@@ -1,0 +1,119 @@
+0. What is the nearest power of 2 to one million?
+
+       20
+20 or 2
+
+
+
+
+
+
+1. How many cycles per second in a GHz (giga Hertz)?
+
+ 30                         9
+2   ok for today.  Really 10
+
+one billion
+1,000,000,000
+
+
+
+
+2. What is the minimum time to the nearest second that a computer with 8 GB RAM
+   and a dual core 2 GHz processor can locate all bytes in its RAM which are set
+   to 'V'?
+
+2 seconds
+
+2 cores each reading 2 billion bytes per second, so 4 billion bytes per second.
+8 billion bytes.
+So 2 seconds.
+
+
+
+3. Give at least two reasons why it is harder for Google to find the best ten
+   pages with Victor Milenkovic on them (compared to #2).
+
+more bytes in Victor Milenkovic than in V
+web pages have 100 to 1000 times as many bytes as one byte in memory
+there are a lot more than 8 billion web pages
+ranks the results by number links to it (plus secret Google formula)
+it takes a lot longer than 1/2000000000 second to load a web page
+
+
+
+4. If one weighing of a pile of coins can detect that the pile contains a bad
+   coin, how many weighings does it take to determine which coin is bad in a
+   pile of 1000?
+
+10 weighings
+500, 250, 125, 63, 31, 15, 7, 3, 1, 1
+
+
+
+
+5. Same question, pile of n?
+
+log2(n) 
+
+
+
+public class Computer {
+    private int ramSize;	// gibibytes
+    private double speed;	// gigaHertz
+
+    public Computer(int ram, double speed) {
+	ramSize = ram;
+        this.speed = speed;
+    }
+    public int getRamSize () { return ramSize; }
+    public int getSpeed () { return speed; }
+    public double getPower () { return ramSize * speed; }
+}
+
+public class Notebook extends Computer {
+    private double weight;
+    
+    public Notebook(int ram, double speed, double weight) {
+	super(ram, speed);
+        this.weight = weight;
+    }
+    public double getWeight () { return weight; }
+    public double getPower() { return ramSize * speed / 2; }
+}
+-------------------------------------------------------------------------
+
+6. Why doesn't Notebook.getPower compile and what are two ways to fix it?
+
+Because ramSize is a private variable in a different class.
+Make it protected instead of private.
+Or call getRamSize().
+Ditto speed.
+
+
+Assuming you've fixed Notebook.getPower, for #1-#3 say what happens:
+compiler error, runtime exception, or what it prints out.
+
+7. 	Computer c = new Notebook(4, 2.11, 7.5);
+	System.out.println(c.getWeight());
+
+Compiler error.
+(Computer does not have getWeight method.)
+
+
+
+8. 	Computer c = new Notebook(4, 2.11, 7.5);
+	System.out.println(c.getPower());
+
+4.22
+It will call the notebook getPower because it's a notebook.
+
+
+
+9. 	Computer c = new Computer(6, 1.88);
+	Notebook n = (Notebook) c;
+	System.out.println(n.getPower());
+
+Runtime error.
+(Trying to turn a Computer into a Notebook>)
+

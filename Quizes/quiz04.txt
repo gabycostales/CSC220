@@ -1,0 +1,123 @@
+0,1. theArray is an array of DirectoryEntry references, sorted by name, with
+   size the number which are currently in use.  DirectoryEntry has a getName
+   method.  Implement find which returns the index of the entry with name or
+   return -1 if it is not there.  Your implementation should run in O(log n)
+   time for n=size.
+
+
+	int find (String name) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Starting with an empty stack s, perform s.push(3), s.push(1), s.push(4),
+   s.push(1), s.pop(), s.push(5), s.pop().  What will s.peek() return?
+
+
+
+
+
+
+3. Write code to print out the contents of s from top to bottom and leave s
+   empty afterwards.
+
+
+
+
+
+
+
+
+
+
+
+4. If a stack is implemented using an array E[] theArray and an int size,
+   implement the push method.  You can assume a reallocate() method is available.
+
+	E push (E item) {
+
+
+
+
+
+
+
+
+
+
+
+5. Implement push for linked stack with Node variable head.
+
+	class Node {
+		E data;
+		Node next;
+		Node (E data, Node next) { this.data = data; this.next = next; }
+	}
+
+	E push (E item) {
+
+
+
+
+
+
+
+
+
+6. Implement pop (for same as #5).  Don't forget to throw an EmptyStackException.
+
+	E pop () {
+
+
+
+
+
+
+
+
+
+
+
+
+7. If stack is implemented with a List<E> theList, implement
+
+	E peek () {
+
+
+
+
+
+
+
+
+
+
+
+
+8. When solving the Tower of Hanoi, the goal 4ab stands for ``Move a
+   pile of 4 disks from peg a to peg b.''  Break this goal into three
+   subgoals.
+
+
+
+
+9. Which one of the subgoals of the previous answer would you push
+   first onto the stack of goals?

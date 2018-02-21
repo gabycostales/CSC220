@@ -1,0 +1,102 @@
+0. Give two reasons you might use Insertion Sort instead of Heap Sort.
+
+Stable
+Easy to implement 
+Faster if n is very small
+Fast if list is almost sorted
+
+
+1. Give one way Merge Sort is worse than Heap Sort and one way it is better.
+
+Worse: very hard to do in place, so it takes up more space.
+Better: Stable if you break ties correctly. Good for sorting on the hard drive.
+
+Same: guaranteed O(nlogn)
+
+
+2. Show the individual changes to the array for the next insertion in Insertion Sort.  (Write out the entire array each time.)
+
+
+	1 1 3 5 9 | 2 6
+	1 1 3 5 9 9 | 6
+	1 1 3 5 5 9 | 6
+	1 1 3 3 5 9 | 6
+	1 1 2 3 5 9 | 6
+
+
+3. Heap Sort is in first, heapifying phase.  Show the sequence of required swaps to finish putting the array into heap order with largest on top.  If it helps, draw it a as a tree, but also show the entire array after each swap.
+
+	3 1 9 6 5 4 2 1
+
+
+
+
+
+
+
+
+
+4. Heap Sort is in the removal phase.  The 9 has already been removed.  Show the
+   entire array after each swap used to remove the 6.
+
+	6 4 5 1 1 3 2 | 9
+
+
+
+
+
+
+
+
+
+5. Quick Sort is using the 3 as the pivot.  Show the swaps that partition it into elements <=3, =3, >3.
+
+	3 1 4 1 5 9 2 6
+	  i           j
+	3 1 4 1 5 9 2 6
+	    i       j
+	3 1 2 1 5 9 4 6
+	    i       j
+	3 1 2 1 5 9 4 6
+	      i   j
+	3 1 2 1 5 9 4 6
+	        ij
+	3 1 2 1 5 9 4 6
+	      j i
+	1 1 2 3 5 9 4 6
+	      j i
+
+
+
+For questions 6-9:
+
+	a) Is it stable?
+
+	b) What is the worst case O() running time?
+
+	c) What is the O() running time on randomly ordered input?
+
+
+6. Insertion Sort.
+
+Stable.
+O(n2)
+O(n2)
+
+7. Heap Sort.
+
+Not stable.
+O(nlogn)
+O(nlogn)
+
+8. Quick Sort always using first element as pivot.
+
+Stable.
+O(n2)
+O(nlogn)
+
+9. Merge Sort.
+
+Stable.
+O(nlogn)
+O(nlogn)

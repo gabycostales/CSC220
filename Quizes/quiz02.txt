@@ -1,0 +1,99 @@
+0. What is the O() of the following function?
+
+	7 * log2(n) + 2 * n - 11
+
+
+
+
+
+1. What is the worst case O() running time of ArrayBasedPD.removeEntry?
+
+
+
+
+
+
+2. What is the BEST case O() running time of ArrayBasedPD.removeEntry?
+
+
+
+
+
+
+3. What is the worst case O() running time of SortedPD.find?
+
+
+
+
+
+
+4. Are your answers to #1, #2, and #3 for n=size or n=capacity
+   (same as theDirectory.length)?
+
+
+
+
+
+
+5. Suppose a method has O(log(n)) running time.  It takes 30ms
+   (milliseconds) for n=1000.  What is the constant?
+
+
+
+
+
+
+
+
+
+
+
+
+
+6. What is the estimated running time of the method in #5 for n=10000?
+
+
+
+7. How many milliseconds in a second?  How many microseconds in a second?
+
+
+
+
+
+
+8. Finish writing the following method:
+
+    /** Determine the time in milliseconds it takes to calculate the
+        n'th Fibonacci number averaged over ncalls calls.
+	@param fib an object that implements the Fib interface
+	@param n the index of the Fibonacci number to calculate
+	@param ncalls the number of calls to average over
+	@return the average time per call
+    */
+    static double time (Fib fib, int n, int ncalls) {
+    	long start = System.currentTimeMillis();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9. If fib.fib(n) takes about 20ms (milliseconds), what is the smallest
+   value of ncalls that would give you 3 significant figures of accuracy?

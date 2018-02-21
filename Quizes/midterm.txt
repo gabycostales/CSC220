@@ -1,0 +1,220 @@
+0. The class DirectoryEntry has a method getName() which returns a String name of the
+   person with that entry.
+
+   The class ArrayBasedPD holds a collection of entries in an array theArray from
+   index 0 to index size-1.  Implement find which takes a name and returns the index
+   of the entry with that name or -1 if there is no such entry:
+
+	int find (String name) {
+
+
+
+
+
+
+
+
+
+
+1. The class SortedPD is similar to ArrayBasedPD except that theArray is kept sorted
+   alphabetically (lexicographically) by entry name.  Implement a method to insert a
+   new entry.  You can assume there is room and the entry is not already there.
+
+	void insert (DirectoryEntry entry) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Write a version of find for SortedPD that runs in O(log n) time.
+
+	int find (String name) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. The removeEntry(name) of either ArrayBasedPD or SortedPD calls find(name) to get
+   the index of the entry and removes it, using the most efficient method possible.
+
+a. What is the O() of ArrayBasedPD removeEntry(name)?  Explain why.  What is the
+   worst possible entry to remove?
+
+
+
+
+
+
+
+
+
+
+
+
+
+b. What is the O() of SortedPD removeEntry(name)?  Explain why.  What is the worst
+   possible entry to remove?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. Suppose SortedPD using List<DirectoryEntry> theList instead of
+   DirectoryEntry[] theArray, but theList is still sorted.  The find method uses
+   theList.get(middle) instead of theArray[middle].
+
+a. What is the O() running time of theList.get(middle) if theList is an
+   ArrayList<DirectoryEntry>?  A LinkedList<DirectoryEntry>?
+
+
+
+
+
+
+
+b. What is the O() running time of find(name) if theList is an
+   ArrayList<DirectoryEntry>?  A LinkedList<DirectoryEntry>?  WHY??
+
+
+
+
+
+
+
+5. The variable head points to the first Node in doubly linked list ordered by
+   increasing key.  The variable tail points to the last Node.  Node has next,
+   previous, key, and value.  The key is of type K which implements Comparable<K>,
+   meaning you can use key1.compareTo(key2) for key1 and key2 of type K.  The
+   variable newNode points to a new Node.  Write code that sets Node variables
+   previous and next to the node that should come before newNode and the node that
+   should come after newNode.  If there is no node that should come before newNode,
+   then previous should be null.  Similarly next.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6. Continuing from #6, write code that inserts newNode into the list.  It should work
+   even if previous and/or next is null.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7. In a Tower of Hanoi solver, the goal 4bc means move the top four disks from
+   peg b to peg c.  The current state of the pegs and the goal stack is as
+   follows (1ab is on top).  Show the result of popping and processing two items
+   from the goal stack, pushing new goals or moving pegs as appropriate.  (Your
+   answer should involve exactly TWO pops.  If you find yourself popping more
+   than twice, please ask me to explain the question.)
+
+	a: 5 4
+	b:
+	c: 3 2 1
+
+	goals: 4bc 1ac 3cb 1ab
+
+
+
+
+8. Suppose ArrayQueue<String> has front==1, rear==4, and an array theData of
+   length 5 with the following data:
+
+	"Mary", "had", "a", "little", "lamb"
+
+   (The poll() method does NOT set unused array entries to null.)
+
+   a. Execute poll(), offer("fleece") and offer("white").  What are the contents
+      of the entire array?  What are the values of front and rear?
+
+
+
+
+
+
+
+
+
+
+
+
+   b. To the result of part a, offer("snow").  Same questions.
+
+
+
+
+
+
+
+
+
+
+
+
+9a. Method A takes 21.876 ms.  If the computer has a millisecond clock, how many
+    times do you have to call method A to measure its running time to three
+    significant figures?  Your answer should not be more than twice as big as
+    necessary.
+
+
+
+
+
+ b. Method B takes 50 ms on input of size 100.  Its O() is O(n log n).  (READ
+    THAT CAREFULLY!)  Estimate its running time for n=1000.

@@ -1,0 +1,74 @@
+0. What is the O() of the following function?
+
+	7 * log2(n) + 2 * n - 11
+
+O(n)
+
+1. What is the worst case O() running time of ArrayBasedPD.removeEntry?
+
+O(n)
+This is for removing the last entry because the call to find must look at all the others.
+
+2. What is the BEST case O() running time of ArrayBasedPD.removeEntry?
+
+O(1)
+
+The first entry is good because find finds it in O(1) and removeEntry removes it by copying the last entry on top of it, which also costs
+O(1).
+
+3. What is the worst case O() running time of SortedPD.find?
+
+O(log n)
+Because it uses binary search (gold coin thing).
+
+4. Are your answers to #1, #2, and #3 for n=size or n=capacity
+   (same as theDirectory.length)?
+
+size
+You don't need to look at anything but entries 0 to size-1.
+
+
+5. Suppose a method has O(log(n)) running time.  It takes 30ms
+   (milliseconds) for n=1000.  What is the constant?
+
+t = c log10(n)
+30 = c log10(1000)
+30 = c 3
+c = 10
+
+6. What is the estimated running time of the method in #5 for n=10000?
+
+t = c log10(n)
+t = 10 log10(10000)
+t = 10 * 4
+t = 40 ms
+
+7. How many milliseconds in a second?  How many microseconds in a second?
+
+1000
+1000000
+
+8. Finish writing the following method:
+
+    /** Determine the time in milliseconds it takes to calculate the n'th Fibonacci number averaged over ncalls calls.
+	@param fib an object that implements the Fib interface
+	@param n the index of the Fibonacci number to calculate
+	@param ncalls the number of calls to average over
+	@return the average time per call
+    */
+    static double time (Fib fib, int n, int ncalls) {
+    	long start = System.currentTimeMillis();
+
+	for (int i = 0; i < ncalls; i++)
+		fib.fib(n);
+
+	long end = System.currentTimeMillis();
+
+        double aver = (double) (end - start) / ncalls;
+        return aver;
+    }
+
+9. If fib.fib(n) takes about 20ms (milliseconds), what is the smallest value of ncalls that would give you 3 significant figures of accuracy?
+
+At least 50 calls because the total times has to be at least 1000 and 50*20=1000.
+

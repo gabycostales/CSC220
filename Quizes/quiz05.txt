@@ -1,0 +1,114 @@
+0. List<E> has implementations ArrayList<E> and LinkedList<E> which implement
+   the list as either a (partially filled) array or a (doubly) linked list.
+   What is the O() running time of get(index) for a linked list?
+
+
+
+
+
+1. Suppose SortedPD used LinkedList<DirectoryEntry> to store the entries but
+   SortedPD.find still uses binary search.  (Start at the middle, etc.  Of
+   course, it would use get(c) instead of array[c].)  What would be the O()
+   running time of find?
+
+
+
+
+
+2. When a program is iterating over a ListQueue, which uses a linked list, what
+   is the O() running time of iterator.next()?
+
+
+
+
+
+3. If you are planning to use poll (which does *not* throw an exception for an
+   empty queue), why is it a bad idea to call offer with null:  queue.offer(null)?
+
+
+
+
+
+
+
+
+4. The methods of AbstractQueue<E> work by calling the methods that YOU WROTE
+   yesterday.  How can AbstractQueue<E> implement remove() by calling poll()
+   and size() which you implemented?  Remember, remove() should throw
+   NoSuchElementException if there is no element to remove.
+
+	E remove () {
+
+
+
+
+
+
+
+
+
+
+5. ArrayQueue<E> uses a circular array theData and int variables front, rear,
+   size, and capacity.  Implement poll.  Don't forget the empty case.
+
+	E poll () {
+
+
+
+
+
+
+
+
+
+
+
+6. Suppose ArrayQueue<String> has an array theData of length 5 with the
+   following data:
+
+	"Mary", "had", "a", "little", "lamb"
+
+   Suppose front==1 and rear==4.  (Zero based indexing!!!)
+
+   What does poll() return?  What is the new value of front?  What are the new
+   contents of the array?  NOTE: just because an element of the array is not
+   null does not mean it is in the queue!  front and rear determine which
+   elements are in the queue.
+
+
+
+
+
+
+
+7. After executing the poll() in #6, offer("fleece") and then offer("white").
+   What is the value of rear?  What are the contents of the array?
+
+
+
+
+
+
+
+8. Now offer("snow").  What does the array look like and what are the values of
+   front and rear?
+
+
+
+
+
+
+
+9. ListQueue<E> uses a linked list, with Node variables front and rear, and int
+   variable size.  Implement offer.
+
+	class Node {
+		E data;
+		Node next;
+		Node (E data) { this.data = data; this.next = null; }
+	}
+
+        Node front, rear;
+        int size;
+
+	boolean offer (E obj) {

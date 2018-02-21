@@ -1,0 +1,99 @@
+0. How many levels do you expect a skip list with n entries to have?  On average, in how many levels does an entry appear?
+
+log2n + 1
+
+
+1. When searching for an entry in a skip list with at least 5 levels, how many times do you expect to move forward on level=3?  Why?
+
+Once. Never expect to move forward more than once, because every other level is a higher level we have already checked. If we needed to move more forward, we would have.
+
+
+2. Insert 6 into the following binary search tree
+
+         3
+    1         4
+      2         5
+                 9
+		     6
+
+
+3.  Starting with the same tree (before inserting 6), show the two ways to remove 3.
+
+	2
+1		4
+		   5
+			9
+	4
+1		5
+   2		   9
+
+
+4. Show the steps involved in inserting 4 into the following heap:
+
+         1
+    6         5
+  9   9     7   8
+
+	   1
+    6         5
+  9   9     7   8
+4
+
+	   1
+    6         5
+  4   9     7   8
+9
+
+	   1
+    4         5
+  6   9     7   8
+9
+
+5. Returning to the initial heap in the previous problem, show the
+   steps involved in removing 1.
+
+         1
+    6         5
+  9   9     7   8
+
+         8
+    6         5
+  9   9     7   
+
+         5
+    6         8
+  9   9     7
+
+         5
+    6         7
+  9   9     8
+
+
+
+6. Circle the leftmost node in the following tree.  What is the result of removing the leftmost node?
+
+
+         3
+    (1)       4
+      2         5
+                 9
+
+         3
+    2         4
+                5
+                 9
+
+
+7. If root points to the root of the tree in #6 and you are implementing removeLeftMost(Node root) which removes the leftmost node in a tree and returns the root of the new tree, what is the recursive call you need to make?  What do you return?
+
+root.left = removeLeftMost(root.left);
+return root;
+
+8. For i>0, where is the parent of theArray[i] stored?
+
+(i-1)/2
+
+9. How can you tell that theArray[i] has a left child but no right child?
+
+2 * i + 2 == size;
+
